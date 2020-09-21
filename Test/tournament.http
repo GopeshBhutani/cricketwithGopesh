@@ -1,0 +1,21 @@
+@server = http://localhost:4004/tournament
+@me = Authorization: Basic {{$processEnv USER}}:
+
+
+
+### ------------------------------------------------------------------------
+# Create Matches as authenticated user
+
+POST {{server}}/Matches
+content-type: application/json;IEEE754Compatible=true
+
+{
+    "match_no": 1,
+    "startDate": "2020-09-20",
+    "startTime": "00:00:01",
+    "venue": "Abu Dhabi",
+    "play_stage": "L",
+    "team": 6,
+    "toss": "L",
+    "matchStatus":"L"
+}
