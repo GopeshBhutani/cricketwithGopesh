@@ -1,7 +1,7 @@
 ## Generated mta.yaml based on template version 0.2.0
 ## appName = cricketwithGopesh
 ## language=nodejs; multiTenant=false
-## approuter
+## approuter=
 _schema-version: '3.1'
 ID: cricketwithGopesh
 version: 1.0.0
@@ -12,7 +12,7 @@ parameters:
   
 build-parameters:
   before-all:
-   - builder: npm
+   - builder: custom
      commands:
       - npm install
       - npx cds build
@@ -54,7 +54,7 @@ modules:
     #  TARGET_CONTAINER: '~{hdi-conatiner-name}'
     #  EXIT: 1  # required by deploy.js task to terminate 
 
- 
+
 resources:
  # services extracted from CAP configuration
  # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
