@@ -4,7 +4,7 @@
 ## approuter
 _schema-version: '3.1'
 ID: cricketwithGopesh
-version: 1.0.0
+version: 1.0.1
 description: "Cricket with Gopesh"
 parameters:
   enable-parallel-deployments: true
