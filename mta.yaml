@@ -10,12 +10,12 @@ parameters:
   enable-parallel-deployments: true
   
   
-# build-parameters:
-#   before-all:
-#    - builder: npm
-#      commands:
-#       - npm install
-#       - npx cds build
+build-parameters:
+  before-all:
+   - builder: npm
+     commands:
+      - npm install
+      - npx cds build
       
 
 modules:
@@ -26,10 +26,6 @@ modules:
    path: gen/srv
    build-parameters:
       # ignore: ["node_modules/"]
-#       - builder: npm
-#         commands:
-#          - npm install
-#          - npx cds build
     parameters:
         memory: 512M
         disk-quota: 512M
