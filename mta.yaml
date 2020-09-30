@@ -12,7 +12,7 @@ parameters:
   
 build-parameters:
   before-all:
-   - builder: custom
+   - builder: npm
      commands:
       - npm install
       - npx cds build
