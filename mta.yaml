@@ -10,12 +10,12 @@ parameters:
   enable-parallel-deployments: true
   
   
-build-parameters:
-  before-all:
-   - builder: npm
-     commands:
-      - npm install
-      - npx cds build
+# build-parameters:
+#   before-all:
+#    - builder: npm
+#      commands:
+#       - npm install
+#       - npx cds build
       
 
 modules:
