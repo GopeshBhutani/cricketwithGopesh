@@ -65,6 +65,8 @@ resources:
    parameters:
      service: hana  # or 'hanatrial' on trial landscapes
      service-plan: hdi-shared
+     config: 
+       database_id: eb6d1f4b-0d9c-456c-b401-73af61111a5b     
    properties:
      hdi-service-name: ${service-name}
 
