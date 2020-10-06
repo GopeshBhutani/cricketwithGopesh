@@ -30,7 +30,7 @@ stages:
       steps:
         - bash: 'mbt build -p=cf --mtar cricketwithGopesh_1.0.1.mtar'
         - publish: $(System.DefaultWorkingDirectory)/.
-          artifact: Mta_Archives
+          artifact: CAP_Project
 
 - stage: deploy
   displayName: Deployment to SAP Cloud Platform (cf)
@@ -42,4 +42,4 @@ stages:
       steps:
         - download: current
           artifact: Mta_Archives
-        - bash: 'cf login -u "$(CF-USER)" -p "$(CF-PASSWORD)" -a "$(CF-API)" -o "$(CF-ORG)" -s "$(CF-SPACE)" && cf deploy $(Pipeline.Workspace)/Mta_Archives/cricketwithGopesh_1.0.1.mtar -f'
+        - bash: 'cf login -u "$(CF-USER)" -p "$(CF-PASSWORD)" -a "$(CF-API)" -o "$(CF-ORG)" -s "$(CF-SPACE)" && cf deploy $(Pipeline.Workspace)/CAP_Project/mta_archive/cricketwithGopesh_1.0.1.mtar -f'
