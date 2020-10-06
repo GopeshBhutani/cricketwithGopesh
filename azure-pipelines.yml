@@ -41,5 +41,5 @@ stages:
       container: cfcli
       steps:
         - download: current
-          artifact: Mta_Archives
+          artifact: CAP_Project
         - bash: 'cf login -u "$(CF-USER)" -p "$(CF-PASSWORD)" -a "$(CF-API)" -o "$(CF-ORG)" -s "$(CF-SPACE)" && cf deploy $(Pipeline.Workspace)/CAP_Project/mta_archive/cricketwithGopesh_1.0.1.mtar -f'
