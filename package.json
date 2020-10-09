@@ -1,15 +1,41 @@
 {
-  "name": "demo-project",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^3",
-    "express": "^4"
-  },
-  "scripts": {
-    "start": "npx cds run"
-  }
+    "name": "demo-project",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^3",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.4.47",
+        "@sap/hana-client": "^2.5.109",
+        "@sap/xsenv": "^3.0.0",
+        "@sap/xssec": "^3.0.9",
+        "express": "^4"
+    },
+    "scripts": {
+        "start": "npx cds run"
+    },
+    "cds": {
+        "hana": {
+            "deploy-format": "hdbtable",
+            "syntax": "hdi"
+        },
+        "requires": {
+            "db": {
+                "kind": "hana"
+            },
+            "uaa": {
+                "kind": "xsuaa"
+            }
+        },
+        "odata": {
+            "version": "v4"
+        },
+        "auth": {
+            "passport": {
+                "strategy": "JWT"
+            }
+        }
+    }
 }

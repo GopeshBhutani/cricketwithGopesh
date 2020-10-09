@@ -33,6 +33,7 @@ modules:
    requires:
     # Resources extracted from CAP configuration
     - name: cricketwithGopesh-db
+    - name: cricketwithGopesh-xsuaa
       # requires:
       # - name: cricketwithGopesh-dbnpm install
    provides:
@@ -71,3 +72,13 @@ resources:
      hdi-service-name: ${service-name}
 
 
+# ------------------------------------------------------------
+ - name: cricketwithGopesh-xsuaa
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+      config:
+        tenant-mode: dedicated
