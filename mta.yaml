@@ -42,18 +42,20 @@ modules:
         srv-url: ${default-url}
 
 
-#  # --------------------- SIDECAR MODULE ------------------------
-#  - name: cricketwithGopesh-db-deployer
-#   # ------------------------------------------------------------
-#    type: hdb
-#    path: gen/db
-#    parameters:
-#       app-name: cricketwithGopesh-db
-#    requires: 
-#       - name: cricketwithGopesh-db
-#   #  properties:
-#     #  TARGET_CONTAINER: '~{hdi-conatiner-name}'
-#     #  EXIT: 1  # required by deploy.js task to terminate 
+ # --------------------- SIDECAR MODULE ------------------------
+ - name: cricketwithGopesh-db-deployer
+  # ------------------------------------------------------------
+   type: hdb
+   path: gen/db
+   build-parameters:
+     ignore: ["package-lock.json", "node_modules/"]
+   parameters:
+      app-name: cricketwithGopesh-db
+   requires: 
+      - name: cricketwithGopesh-db
+  #  properties:
+    #  TARGET_CONTAINER: '~{hdi-conatiner-name}'
+    #  EXIT: 1  # required by deploy.js task to terminate 
 
 
 resources:
