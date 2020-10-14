@@ -1,11 +1,12 @@
 
+
 namespace cricket.with.gopesh;
 using { Country, managed } from '@sap/cds/common';
 
   entity Teams {
     key ID : Integer;
     name  : localized String;
-    country : Association to Countries;
+    country : String;        
     team_group  : String;
     match_played : Integer;
     won : Integer;
@@ -19,7 +20,6 @@ using { Country, managed } from '@sap/cds/common';
     key ID : Integer;
     abr   : String;
     name  : String;
-    teams : Association to many Teams on teams.country = $self;
   }
 
   entity Matches : managed {
@@ -33,5 +33,3 @@ using { Country, managed } from '@sap/cds/common';
     toss: String(1);
     matchStatus: String(1)
   }
-
-
